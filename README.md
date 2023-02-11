@@ -4,7 +4,7 @@
 
 This library allows a user to see a players trends of a user specified period of time. Primarily, it allows a fantasy user to see their lineups trends over a certain period and trends between a hitter against a certain pitcher.
 
-# Overview
+## Overview
 
 The purpose of this library is to provide fantasy owners a chance to see how the players in their lineup have been doing over a number of games and how they perform against a certain pitcher. This will help facilitate their daily lineup constuction and to see which players on the wire are having a hot streak. 
 
