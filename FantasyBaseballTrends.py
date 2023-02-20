@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 import pandas as pd
 from bs4 import BeautifulSoup
+from selenium.webdriver.chrome.options import Options
+import requests
 
 
 
@@ -16,12 +19,35 @@ def get2023Projected(browser, player):
     searchPlayer(browser, player)
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_proj"})
-    tables = pd.read_html(str(stats))
-    print(tables)
+    table = pd.read_html(str(stats))
+    projected = table[0]
+    print(projected)
+
+    return projected
     
 
 def getLastGame(browser, player):
+    
+    #search the player needed
     searchPlayer(browser, player)
+
+    #get to the link for 2022 stats, will have to change once 2023 season starts
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
+    statsLink = link.get_attribute('href')
+    
+    #load the new page
+    browser.get(statsLink)
+
+    #get the last row of the table and print out the stats for last game
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "batting_gamelogs"})
+    table = pd.read_html(str(stats))
+    lastGame = table[0].iloc[-2]
+    print(lastGame)
+
+    return lastGame
+  
+
     
 
 def getVsRhp():
@@ -41,15 +67,16 @@ def getTable(browser, statsTable):
 
 def main():
 
-    
+    # options = webdriver.ChromeOptions()
+    # options.add_argument('headless')
+    # browser = webdriver.Chrome(options=options)
+
     browser = webdriver.Chrome()
+
     browser.get("https://www.baseball-reference.com/")
     search = input("Which player to search for: ")
-    #searchPlayer(browser, search)
-    get2023Projected(browser, search)
-    #stats = input("Which stats do you want to see from: " + searchPlayer +
-                    #"\n 1. 2022 Stats \n 2. 2023 projected stats \n 3. Career stats \n 4. Last game stats \n ")
-    #get2023Projected(browser, searchPlayer)
-    #getTable(browser)
+    
+    #get2023Projected(browser, search)
+    getLastGame(browser, search)
 
 main()
