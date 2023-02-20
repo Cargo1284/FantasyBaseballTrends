@@ -75,7 +75,7 @@ def getVsRhpCurrent(browser, player):
 
 def getVsLhpCurrent(browser, player):
 
-     #search the player needed
+    #search the player needed
     searchPlayer(browser, player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
@@ -95,6 +95,27 @@ def getVsLhpCurrent(browser, player):
 
     return statsVsLhp
 
+def getCareerSplits(browser, player):
+
+    #search the player needed
+    searchPlayer(browser, player)
+
+    #get to the the link with 2022 batting splits, might have to change to get to 2023
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[1]/a')
+    statsLink = link.get_attribute('href')
+
+    #load the new page
+    browser.get(statsLink)
+
+    #find the table with rhp and return it 
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "plato"})
+    table = pd.read_html(str(stats))
+    careerSplits = table[0].iloc[[0,-2, 1, -1]]
+    print(careerSplits)
+
+    return careerSplits
+
 def getLastxGames():
 
     return
@@ -110,9 +131,10 @@ def main():
     browser.get("https://www.baseball-reference.com/")
     search = input("Which player to search for: ")
     
-    #get2023Projected(browser, search)
-    #getLastGame(browser, search)
-    getVsRhpCurrent(browser, search)
-    getVsLhpCurrent(browser, search)
+    # get2023Projected(browser, search)
+    # getLastGame(browser, search)
+    # getVsRhpCurrent(browser, search)
+    # getVsLhpCurrent(browser, search)
+    getCareerSplits(browser, search)
 
 main()
