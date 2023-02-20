@@ -1,11 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
 import pandas as pd
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
-import requests
+
 
 
 
@@ -16,7 +15,11 @@ def searchPlayer(browser, player):
 
 
 def get2023Projected(browser, player):
+
+    #search the player needed
     searchPlayer(browser, player)
+
+    #parse the page to get the projected 2023 stats table and return it 
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_proj"})
     table = pd.read_html(str(stats))
@@ -48,22 +51,53 @@ def getLastGame(browser, player):
     return lastGame
   
 
-    
+def getVsRhpCurrent(browser, player):
 
-def getVsRhp():
+    #search the player needed
+    searchPlayer(browser, player)
+
+    #get to the the link with 2022 batting splits, might have to change to get to 2023
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
+    statsLink = link.get_attribute('href')
+
+    #load the new page
+    browser.get(statsLink)
+
+    #find the table with rhp and return it 
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "plato"})
+    table = pd.read_html(str(stats))
+    statsVsRhp = table[0].iloc[[0,-2]]
+
+    print(statsVsRhp)
+
+    return statsVsRhp
+
+def getVsLhpCurrent(browser, player):
+
+     #search the player needed
+    searchPlayer(browser, player)
+
+    #get to the the link with 2022 batting splits, might have to change to get to 2023
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
+    statsLink = link.get_attribute('href')
+
+    #load the new page
+    browser.get(statsLink)
+
+    #find the table with rhp and return it 
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "plato"})
+    table = pd.read_html(str(stats))
+    statsVsLhp = table[0].iloc[[1,-1]]
+
+    print(statsVsLhp)
+
+    return statsVsLhp
+
+def getLastxGames():
 
     return
-
-def getVsLhp():
-
-    return
-
-def getTable(browser, statsTable):
-    html = browser.statsTable.page_source
-    table = pd.read_html(html)
-    df = table
-    print(df)
-
 
 def main():
 
@@ -77,6 +111,8 @@ def main():
     search = input("Which player to search for: ")
     
     #get2023Projected(browser, search)
-    getLastGame(browser, search)
+    #getLastGame(browser, search)
+    getVsRhpCurrent(browser, search)
+    getVsLhpCurrent(browser, search)
 
 main()
