@@ -5,6 +5,14 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 
+def setUpWebsite():
+    browser = webdriver.Chrome()
+
+    browser.get("https://www.baseball-reference.com/")
+
+    return browser
+
+
 def searchPlayer(browser, player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
@@ -148,13 +156,15 @@ def getAvgOverLastXGames(browser, player, gamesNum):
 
 def main():
 
+    browser = setUpWebsite()
+
     # options = webdriver.ChromeOptions()
     # options.add_argument('headless')
     # browser = webdriver.Chrome(options=options)
 
-    browser = webdriver.Chrome()
+    # browser = webdriver.Chrome()
 
-    browser.get("https://www.baseball-reference.com/")
+    # browser.get("https://www.baseball-reference.com/")
     #search = input("Which player to search for: ")
     
     # get2023Projected(browser, search)
