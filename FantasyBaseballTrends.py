@@ -9,6 +9,10 @@ def searchPlayer(browser, player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
 
+    url = browser.url
+
+    return url
+
 def get2023Projected(browser, player):
 
     #search the player needed
@@ -151,7 +155,7 @@ def main():
     browser = webdriver.Chrome()
 
     browser.get("https://www.baseball-reference.com/")
-    search = input("Which player to search for: ")
+    #search = input("Which player to search for: ")
     
     # get2023Projected(browser, search)
     # getLastGame(browser, search)
