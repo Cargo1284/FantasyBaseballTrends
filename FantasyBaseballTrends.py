@@ -5,15 +5,17 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 
-def setUpWebsite():
-    browser = webdriver.Chrome()
 
-    browser.get("https://www.baseball-reference.com/")
+# def setUpWebsite():
+#     global broswer 
+#     browser = webdriver.Chrome()
 
-    return browser
+#     browser.get("https://www.baseball-reference.com/")
+
+#     return browser
 
 
-def searchPlayer(browser, player):
+def searchPlayer(player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
 
@@ -21,10 +23,10 @@ def searchPlayer(browser, player):
 
     return url
 
-def get2023Projected(browser, player):
+def get2023Projected(player):
 
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #parse the page to get the projected 2023 stats table and return it 
     soup = BeautifulSoup(browser.page_source, features="lxml")
@@ -33,13 +35,15 @@ def get2023Projected(browser, player):
     projected = table[0]
     #print(projected)
 
+    #projected.to_csv('AaronJudgeProj.csv')
+
     return projected
     
 
-def getLastGame(browser, player):
+def getLastGame(player):
     
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #get to the link for 2022 stats, will have to change once 2023 season starts
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
@@ -52,16 +56,19 @@ def getLastGame(browser, player):
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_gamelogs"})
     table = pd.read_html(str(stats))
-    lastGame = table[0].iloc[-2]
-    #print(lastGame)
+    lastGame = table[0].iloc[-2,3:]
+    lastGame = lastGame.to_frame()
+    lastGame = lastGame.transpose()
 
+    print(lastGame.shape)
+    
     return lastGame
   
 
-def getVsRhpCurrent(browser, player):
+def getVsRhpCurrent(player):
 
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
@@ -80,10 +87,10 @@ def getVsRhpCurrent(browser, player):
 
     return statsVsRhp
 
-def getVsLhpCurrent(browser, player):
+def getVsLhpCurrent(player):
 
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
@@ -102,10 +109,10 @@ def getVsLhpCurrent(browser, player):
 
     return statsVsLhp
 
-def getCareerSplits(browser, player):
+def getCareerSplits(player):
 
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[1]/a')
@@ -123,10 +130,10 @@ def getCareerSplits(browser, player):
 
     return careerSplits
 
-def getLastxGames(browser, player, gamesNum):
+def getLastxGames(player, gamesNum):
 
     #search the player needed
-    searchPlayer(browser, player)
+    searchPlayer(player)
 
     #get to the link for 2022 stats, will have to change once 2023 season starts
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
@@ -139,24 +146,31 @@ def getLastxGames(browser, player, gamesNum):
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_gamelogs"})
     table = pd.read_html(str(stats))
-    lastxGames = table[0].iloc[-gamesNum - 1:-1]
+    lastxGames = table[0].iloc[-gamesNum - 1:-1, 3:]
+    
     #print(lastxGames)
 
     return lastxGames
 
 
 #work on this part
-def getAvgOverLastXGames(browser, player, gamesNum):
-    xGames = getLastxGames(browser, player, gamesNum)
+def getAvgOverLastXGames(player, gamesNum):
+    xGames = getLastxGames(player, gamesNum)
     avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
 
     #print(avgXGames)
 
     return(avgXGames)
 
+
 def main():
+    global browser
 
     #browser = setUpWebsite()
+   
+    browser = webdriver.Chrome()
+
+    browser.get("https://www.baseball-reference.com/")
 
     # options = webdriver.ChromeOptions()
     # options.add_argument('headless')
@@ -167,13 +181,35 @@ def main():
     # browser.get("https://www.baseball-reference.com/")
     #search = input("Which player to search for: ")
     
-    # get2023Projected(browser, search)
+    #print(get2023Projected("Aaron Judge"))
     # getLastGame(browser, search)
     # getVsRhpCurrent(browser, search)
     # getVsLhpCurrent(browser, search)
     # getCareerSplits(browser, search)
     # getAvgOverLastXGames(browser, search, 5)
 
-    return
+    #get a save the csv's for aaron judge and mike trout for each function 
 
+    # Aaron_Judge = get2023Projected("Aaron Judge")
+    # Aaron_Judge.to_csv('AaronJudgeProj.csv')
+
+    # Aaron_Judge = getLastGame("Aaron Judge")
+    # Aaron_Judge.to_csv('JudgeLastGame.csv')   
+
+    # Aaron_Judge = getVsRhpCurrent("Aaron Judge")
+    # Aaron_Judge.to_csv('JudgeRhpCurrent.csv') 
+
+    # Aaron_Judge = getVsLhpCurrent("Aaron Judge")
+    # Aaron_Judge.to_csv('JudgeLhpCurrent.csv') 
+
+    # Aaron_Judge = getCareerSplits("Aaron Judge")
+    # Aaron_Judge.to_csv('JudgeCarrerSplits.csv') 
+
+    # Aaron_Judge = getLastxGames("Aaron Judge", 5)
+    # Aaron_Judge.to_csv('JudgeLast5.csv') 
+
+    # Aaron_Judge = getLastxGames("Aaron Judge", 10)
+    # Aaron_Judge.to_csv('JudgeLast10.csv') 
+
+    #maybe find one that gets the 
 main()
