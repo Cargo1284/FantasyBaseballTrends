@@ -17,7 +17,7 @@ def searchPlayer(browser, player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
 
-    url = browser.url
+    url = browser.current_url
 
     return url
 
@@ -156,7 +156,7 @@ def getAvgOverLastXGames(browser, player, gamesNum):
 
 def main():
 
-    browser = setUpWebsite()
+    #browser = setUpWebsite()
 
     # options = webdriver.ChromeOptions()
     # options.add_argument('headless')
@@ -173,5 +173,7 @@ def main():
     # getVsLhpCurrent(browser, search)
     # getCareerSplits(browser, search)
     # getAvgOverLastXGames(browser, search, 5)
+
+    return
 
 main()
