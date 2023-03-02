@@ -5,14 +5,9 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 
-
-
-
 def searchPlayer(browser, player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
-
-
 
 def get2023Projected(browser, player):
 
@@ -24,7 +19,7 @@ def get2023Projected(browser, player):
     stats = soup.find("table", {"id": "batting_proj"})
     table = pd.read_html(str(stats))
     projected = table[0]
-    print(projected)
+    #print(projected)
 
     return projected
     
@@ -46,7 +41,7 @@ def getLastGame(browser, player):
     stats = soup.find("table", {"id": "batting_gamelogs"})
     table = pd.read_html(str(stats))
     lastGame = table[0].iloc[-2]
-    print(lastGame)
+    #print(lastGame)
 
     return lastGame
   
@@ -69,7 +64,7 @@ def getVsRhpCurrent(browser, player):
     table = pd.read_html(str(stats))
     statsVsRhp = table[0].iloc[[0,-2]]
 
-    print(statsVsRhp)
+    #print(statsVsRhp)
 
     return statsVsRhp
 
@@ -91,7 +86,7 @@ def getVsLhpCurrent(browser, player):
     table = pd.read_html(str(stats))
     statsVsLhp = table[0].iloc[[1,-1]]
 
-    print(statsVsLhp)
+    #print(statsVsLhp)
 
     return statsVsLhp
 
@@ -112,13 +107,40 @@ def getCareerSplits(browser, player):
     stats = soup.find("table", {"id": "plato"})
     table = pd.read_html(str(stats))
     careerSplits = table[0].iloc[[0,-2, 1, -1]]
-    print(careerSplits)
+    #print(careerSplits)
 
     return careerSplits
 
-def getLastxGames():
+def getLastxGames(browser, player, gamesNum):
 
-    return
+    #search the player needed
+    searchPlayer(browser, player)
+
+    #get to the link for 2022 stats, will have to change once 2023 season starts
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
+    statsLink = link.get_attribute('href')
+    
+    #load the new page
+    browser.get(statsLink)
+
+    #get the last row of the table and print out the stats for last game
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "batting_gamelogs"})
+    table = pd.read_html(str(stats))
+    lastxGames = table[0].iloc[-gamesNum - 1:-1]
+    #print(lastxGames)
+
+    return lastxGames
+
+
+#work on this part
+def getAvgOverLastXGames(browser, player, gamesNum):
+    xGames = getLastxGames(browser, player, gamesNum)
+    avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
+
+    #print(avgXGames)
+
+    return(avgXGames)
 
 def main():
 
@@ -135,6 +157,7 @@ def main():
     # getLastGame(browser, search)
     # getVsRhpCurrent(browser, search)
     # getVsLhpCurrent(browser, search)
-    getCareerSplits(browser, search)
+    # getCareerSplits(browser, search)
+    # getAvgOverLastXGames(browser, search, 5)
 
 main()
