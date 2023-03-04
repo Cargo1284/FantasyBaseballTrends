@@ -6,16 +6,16 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.chrome.options import Options
 
 
-# def setUpWebsite():
-#     global broswer 
-#     browser = webdriver.Chrome()
+def setUpWebsite():
+    global broswer 
+    browser = webdriver.Chrome()
 
-#     browser.get("https://www.baseball-reference.com/")
+    browser.get("https://www.baseball-reference.com/")
 
-#     return browser
+    return browser
 
 
-def searchPlayer(player):
+def searchPlayer(browser, player):
     searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)  
 
@@ -23,10 +23,10 @@ def searchPlayer(player):
 
     return url
 
-def get2023Projected(player):
+def get2023Projected(browser, player):
 
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #parse the page to get the projected 2023 stats table and return it 
     soup = BeautifulSoup(browser.page_source, features="lxml")
@@ -40,10 +40,10 @@ def get2023Projected(player):
     return projected
     
 
-def getLastGame(player):
+def getLastGame(browser, player):
     
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #get to the link for 2022 stats, will have to change once 2023 season starts
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
@@ -60,15 +60,15 @@ def getLastGame(player):
     lastGame = lastGame.to_frame()
     lastGame = lastGame.transpose()
 
-    print(lastGame.shape)
+    #print(lastGame.shape)
     
     return lastGame
   
 
-def getVsRhpCurrent(player):
+def getVsRhpCurrent(browser, player):
 
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
@@ -87,10 +87,10 @@ def getVsRhpCurrent(player):
 
     return statsVsRhp
 
-def getVsLhpCurrent(player):
+def getVsLhpCurrent(browser, player):
 
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
@@ -109,10 +109,10 @@ def getVsLhpCurrent(player):
 
     return statsVsLhp
 
-def getCareerSplits(player):
+def getCareerSplits(browser, player):
 
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #get to the the link with 2022 batting splits, might have to change to get to 2023
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[1]/a')
@@ -130,10 +130,10 @@ def getCareerSplits(player):
 
     return careerSplits
 
-def getLastxGames(player, gamesNum):
+def getLastxGames(browser, player, gamesNum):
 
     #search the player needed
-    searchPlayer(player)
+    searchPlayer(browser, player)
 
     #get to the link for 2022 stats, will have to change once 2023 season starts
     link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
@@ -154,8 +154,8 @@ def getLastxGames(player, gamesNum):
 
 
 #work on this part
-def getAvgOverLastXGames(player, gamesNum):
-    xGames = getLastxGames(player, gamesNum)
+def getAvgOverLastXGames(browser, player, gamesNum):
+    xGames = getLastxGames(browser, player, gamesNum)
     avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
 
     #print(avgXGames)
@@ -164,13 +164,15 @@ def getAvgOverLastXGames(player, gamesNum):
 
 
 def main():
-    global browser
+    #global browser
 
     #browser = setUpWebsite()
    
-    browser = webdriver.Chrome()
+    # browser = webdriver.Chrome()
 
-    browser.get("https://www.baseball-reference.com/")
+    # browser.get("https://www.baseball-reference.com/")
+
+    # print("hello")
 
     # options = webdriver.ChromeOptions()
     # options.add_argument('headless')
@@ -212,4 +214,8 @@ def main():
     # Aaron_Judge.to_csv('JudgeLast10.csv') 
 
     #maybe find one that gets the 
+
+    return
+
+
 main()
