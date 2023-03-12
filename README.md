@@ -1,5 +1,8 @@
 # FantasyBaseballTrends
 
+
+[![Build Status](https://github.com/FantasyBaseballTrends/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/FantasyBaseballTrends/actions?query=workflow%3A%22Build+Status%22)
+[![codecov](https://codecov.io/gh/FantasyBaseballTrends/branch/main/graph/badge.svg)](https://codecov.io/gh/FantasyBaseballTrends)
 ![Crates.io](https://img.shields.io/crates/l/ap)
 
 This library allows a user to see a players trends of a user specified period of time. Primarily, it allows a fantasy user to see their lineups trends over a certain period and trends between a hitter against a certain pitcher.
