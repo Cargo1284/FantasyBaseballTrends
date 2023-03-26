@@ -43,31 +43,31 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(type(getCareerSplits(self.driver, "Aaron Judge")), pd.DataFrame)
 
     def test_intget2023Projected(self):
-        testFrame = pd.read_csv('./testingFiles/AaronJudgeProj.csv', index_col=0)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/AaronJudgeProj.csv', index_col=0)
         assert_frame_equal(get2023Projected(self.driver, "Aaron Judge"), testFrame)
 
     def test_intgetLastGame(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeLastGame.csv', index_col=0, dtype=str)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeLastGame.csv', index_col=0, dtype=str)
         assert_frame_equal(getLastGame(self.driver, "Aaron Judge"), testFrame, check_dtype=False)
 
     def test_intgetRhpCurrent(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeRhpCurrent.csv', index_col=0)
-        assert_frame_equal(getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeRhpCurrent.csv', index_col=0) 
+        assert_frame_equal(getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame) 
 
     def test_intgetLhpCurrent(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeLhpCurrent.csv', index_col=0)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeLhpCurrent.csv', index_col=0)
         assert_frame_equal(getVsLhpCurrent(self.driver, "Aaron Judge"), testFrame)
 
     def test_intgetCarrerSplits(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeCareerSplits.csv', index_col=0)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeCareerSplits.csv', index_col=0)
         assert_frame_equal(getCareerSplits(self.driver, "Aaron Judge"), testFrame)
 
     def test_intgetLastxGames1(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeLast5.csv', index_col=0, dtype=str)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeLast5.csv', index_col=0, dtype=str)
         assert_frame_equal(getLastxGames(self.driver, "Aaron Judge", 5), testFrame, check_dtype=False)
 
     def test_intgetLastxGames2(self):
-        testFrame = pd.read_csv('./testingFiles/JudgeLast10.csv', index_col=0, dtype=str)
+        testFrame = pd.read_csv('FantasyBaseballTrends/testingFiles/JudgeLast10.csv', index_col=0, dtype=str)
         assert_frame_equal(getLastxGames(self.driver, "Aaron Judge", 10), testFrame, check_dtype=False)
 
     # make a teardown

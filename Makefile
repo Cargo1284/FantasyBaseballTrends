@@ -3,6 +3,7 @@
 #########
 develop:  ## install dependencies and build library
 	python -m pip install -e .[develop]
+	python -m pip install -e .[dependencies]
 
 build:  ## build the python library
 	python setup.py build build_ext --inplace
@@ -39,10 +40,10 @@ annotate:  ## run type checking
 # TESTS #
 #########
 test: ## clean and run unit tests
-	python3 -m pytest -v FantasyBaseballTrends/test.py
+	python3 -m pytest -v FantasyBaseballTrends/testingFiles/test.py
 
 coverage:  ## clean and run unit tests with coverage
-	python3 -m pytest -v FantasyBaseballTrends/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=50 --cov-report term-missing
+	python3 -m pytest -v FantasyBaseballTrends/testingFiles/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=75 --cov-report term-missing
 
 # Alias
 tests: test
