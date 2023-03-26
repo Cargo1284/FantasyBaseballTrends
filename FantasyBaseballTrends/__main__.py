@@ -1,4 +1,4 @@
-import FantasyBaseballTrends
+# from FantasyBaseballTrends import *
 
-if __name__ == "__main__":
-    FantasyBaseballTrends.main()
+# if __name__ == "__main__":
+#     main()
