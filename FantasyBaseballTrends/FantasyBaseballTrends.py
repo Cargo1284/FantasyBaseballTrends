@@ -154,6 +154,7 @@ def getLastxGames(browser, player, gamesNum):
 
 
 #work on this part
+'''
 def getAvgOverLastXGames(browser, player, gamesNum):
     xGames = getLastxGames(browser, player, gamesNum)
     avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
@@ -161,6 +162,7 @@ def getAvgOverLastXGames(browser, player, gamesNum):
     #print(avgXGames)
 
     return(avgXGames)
+'''
 
 
 def main():
