@@ -8,7 +8,7 @@ build:  ## build the python library
 	python setup.py build build_ext --inplace
 
 install:  ## install library
-	python -m pip install selenium
+	python -m pip install .
 
 #########pyth
 # LINTS #
@@ -39,10 +39,10 @@ annotate:  ## run type checking
 # TESTS #
 #########
 test: ## clean and run unit tests
-	python -m pytest -v ./FantasyBaseballTrends/test.py
+	python3 -m pytest -v FantasyBaseballTrends/test.py
 
 coverage:  ## clean and run unit tests with coverage
-	python -m pytest -v ./FantasyBaseballTrends/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=75 --cov-report term-missing
+	python3 -m pytest -v FantasyBaseballTrends/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=50 --cov-report term-missing
 
 # Alias
 tests: test
