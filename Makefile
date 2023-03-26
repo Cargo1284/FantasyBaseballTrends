@@ -44,7 +44,7 @@ test: ## clean and run unit tests
 	python3 -m pytest -v FantasyBaseballTrends/tests/test.py
 
 coverage:  ## clean and run unit tests with coverage
-	python3 -m pytest -v FantasyBaseballTrends/tests --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=50 --cov-report term-missing
+	python3 -m pytest -v FantasyBaseballTrends/tests/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=50 --cov-report term-missing
 
 # Alias
 tests: test
