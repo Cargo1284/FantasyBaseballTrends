@@ -1,2 +1,2 @@
 from ._version import __version__
-import FantasyBaseballTrends
+from .FantasyBaseballTrends import *

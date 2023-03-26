@@ -8,7 +8,7 @@ build:  ## build the python library
 	python setup.py build build_ext --inplace
 
 install:  ## install library
-	python -m pip install .
+	python -m pip install selenium
 
 #########pyth
 # LINTS #
