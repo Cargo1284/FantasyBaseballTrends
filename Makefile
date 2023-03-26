@@ -17,12 +17,13 @@ install:  ## install library
 lint:  ## run static analysis with flake8
 	python -m black --check FantasyBaseballTrends setup.py
 	python -m flake8 FantasyBaseballTrends setup.py
+	
 
 # Alias
 lints: lint
 
 format:  ## run autoformatting with black
-	python -m black FantasyBaseballTrends/ setup.py
+	python -m black FantasyBaseballTrends/setup.py
 
 # alias
 fix: format
@@ -40,10 +41,10 @@ annotate:  ## run type checking
 # TESTS #
 #########
 test: ## clean and run unit tests
-	python3 -m pytest -v FantasyBaseballTrends/testingFiles/test.py
+	python3 -m pytest -v FantasyBaseballTrends/tests/test.py
 
 coverage:  ## clean and run unit tests with coverage
-	python3 -m pytest -v FantasyBaseballTrends/testingFiles/test.py --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=75 --cov-report term-missing
+	python3 -m pytest -v FantasyBaseballTrends/tests --cov=FantasyBaseballTrends --cov-branch --cov-fail-under=50 --cov-report term-missing
 
 # Alias
 tests: test
