@@ -14,7 +14,8 @@ pull_request:
 workflow_dispatch:
 
 jobs:
-    build: ${{ matrix.os }}
+    build: 
+      runs-on: ${{ matrix.os }}
     strategy:
         matrix: 
             os: [macOS-latest]
