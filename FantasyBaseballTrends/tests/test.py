@@ -51,8 +51,8 @@ class TestFunctions(unittest.TestCase):
         assert_frame_equal(getLastGame(self.driver, "Aaron Judge"), testFrame, check_dtype=False)
 
     def test_intgetRhpCurrent(self):
-        testFrame = pd.read_csv('FantasyBaseballTrends/tests/JudgeRhpCurrent.csv', index_col=0) 
-        assert_frame_equal(getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame) 
+        testFrame = pd.read_csv('FantasyBaseballTrends/tests/JudgeRhpCurrent.csv', index_col=0)
+        assert_frame_equal(getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame)
 
     def test_intgetLhpCurrent(self):
         testFrame = pd.read_csv('FantasyBaseballTrends/tests/JudgeLhpCurrent.csv', index_col=0)
