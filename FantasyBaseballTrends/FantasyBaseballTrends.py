@@ -15,9 +15,7 @@ def setUpWebsite():
 
 
 def searchPlayer(browser, player):
-    searchBox = browser.find_element(
-        By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]'
-    )
+    searchBox = browser.find_element(By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]')
     searchBox.send_keys(player + Keys.RETURN)
 
     url = browser.current_url
@@ -49,9 +47,7 @@ def getLastGame(browser, player):
 
     # get to the link for 2022 stats,
     # will have to change once 2023 season starts
-    link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a'
-    )
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
     statsLink = link.get_attribute('href')
 
     # load the new page
@@ -77,9 +73,7 @@ def getVsRhpCurrent(browser, player):
 
     # get to the the link with 2022 batting splits,
     # might have to change to get to 2023
-    link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a'
-    )
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
     statsLink = link.get_attribute('href')
 
     # load the new page
@@ -103,9 +97,7 @@ def getVsLhpCurrent(browser, player):
 
     # get to the the link with 2022 batting splits,
     #  might have to change to get to 2023
-    link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a'
-    )
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[8]/a')
     statsLink = link.get_attribute('href')
 
     # load the new page
@@ -129,9 +121,7 @@ def getCareerSplits(browser, player):
 
     # get to the the link with 2022 batting splits,
     # might have to change to get to 2023
-    link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[1]/a'
-    )
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[1]/li[1]/a')
     statsLink = link.get_attribute('href')
 
     # load the new page
@@ -154,9 +144,7 @@ def getLastxGames(browser, player, gamesNum):
 
     # get to the link for 2022 stats,
     # will have to change once 2023 season starts
-    link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a'
-    )
+    link = browser.find_element(By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a')
     statsLink = link.get_attribute('href')
 
     # load the new page

@@ -54,7 +54,7 @@ develop = [
 
 [tool.black]
 color = true
-line-length = 79
+line-length = 120
 target-version = ['py38']
 skip-string-normalization = true
 
@@ -64,7 +64,7 @@ ignore = [
 
 [tool.flake8]
 ignore = ['E203', 'W503']
-max-line-length = 79
+max-line-length = 120
 exclude=[
     'FantasyBaseballTrends/tests/test.py'
 ]
