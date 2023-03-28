@@ -17,7 +17,8 @@ requires-python = ">=3.7"
 dependencies = [ 
     "selenium", 
     "pandas",
-    "beautifulsoup4"
+    "beautifulsoup4",
+    "lxml"
 ]
 
 classifiers = [
