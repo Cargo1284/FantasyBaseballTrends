@@ -19,7 +19,7 @@ jobs:
       
       strategy:
           matrix: 
-            os: [ubuntu-latest]
+            os: [macOS-latest]
             python-version: [3.9]
             
       steps:
