@@ -1,6 +1,7 @@
 # FantasyBaseballTrends
 
 ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/Cargo1284/FantasyBaseballTrends/build.yml?branch=main)
+[![Build Status](https://github.com/Cargo1284/FantasyBaseballTrends/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/Cargo1284/FantasyBaseballTrends/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/Cargo1284/FantasyBaseballTrends/branch/main/graph/badge.svg)](https://codecov.io/gh/FantasyBaseballTrends)
 ![Crates.io](https://img.shields.io/crates/l/ap)
 ![GitHub issues](https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends)
