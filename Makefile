@@ -15,6 +15,7 @@ install:  ## install library
 # LINTS #
 #########
 lint:  ## run static analysis with flake8
+	python -m black --diff FantasyBaseballTrends setup.py
 	python -m black --check FantasyBaseballTrends setup.py
 	python -m flake8 FantasyBaseballTrends setup.py
 	
