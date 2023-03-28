@@ -6,10 +6,8 @@ from selenium import webdriver
 
 
 class TestFunctions(unittest.TestCase):
-
     # make a setup
     def setUp(self):
-
         options = webdriver.ChromeOptions()
         # options.add_argument('headless')
         # options.page_load_strategy = 'eager'
