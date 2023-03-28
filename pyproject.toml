@@ -15,7 +15,10 @@ version = "0.0.1"
 requires-python = ">=3.7"
 
 dependencies = [ 
-    "selenium"
+    "selenium", 
+    "pandas",
+    "beautifulsoup4",
+    "lxml"
 ]
 
 classifiers = [
@@ -54,8 +57,8 @@ develop = [
 
 [tool.black]
 color = true
-line-length = 120
-target-version = ['py310']
+line-length = 79
+target-version = ['py38']
 skip-string-normalization = true
 
 [tool.check-manifest]
@@ -64,7 +67,7 @@ ignore = [
 
 [tool.flake8]
 ignore = ['E203', 'W503']
-max-line-length=120
+max-line-length = 120
 exclude=[
 ]
 per-file-ignores= [

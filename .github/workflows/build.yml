@@ -16,18 +16,21 @@ on:
 jobs:
     build: 
       runs-on: ${{ matrix.os }}
+      
       strategy:
           matrix: 
-              os: [macOS-latest]
-              python-version: [3.8]
+            os: [macOS-latest]
+            python-version: [3.9]
+            
       steps:
       - uses: actions/checkout@v3
+      
       - name: Set up Python ${{ matrix.python-version }} 
-        uses: actions/setup=-python@v4
+        uses: actions/setup-python@v4
         with: 
-          python-version: $${{ matrix.python-version }}
+          python-version: ${{ matrix.python-version }}
           cache: "pip"
-          cach-dependency-path: 'pyproject.toml'
+          cache-dependency-path: 'pyproject.toml'
 
       - name: Install dependencies
         run: |
@@ -48,13 +51,6 @@ jobs:
       - name: Test
         run: |
           make coverage
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: pytest-results-${{ matrix.os }}-${{ matrix.python-version }}
-          path: python_junit.xml
-        if: ${{ always() }}
 
       - name: Upload coverage
         uses: codecov/codecov-action@v3
