@@ -1,4 +1,4 @@
-from . import FantasyBaseballTrends as fbt
+import FantasyBaseballTrends as fbt
 import unittest
 from pandas.testing import assert_frame_equal
 import pandas as pd
