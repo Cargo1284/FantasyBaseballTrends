@@ -26,7 +26,6 @@ def searchPlayer(browser, player):
 
 
 def get2023Projected(browser, player):
-
     # search the player needed
     searchPlayer(browser, player)
 
@@ -43,7 +42,6 @@ def get2023Projected(browser, player):
 
 
 def getLastGame(browser, player):
-
     # search the player needed
     searchPlayer(browser, player)
 
@@ -71,7 +69,6 @@ def getLastGame(browser, player):
 
 
 def getVsRhpCurrent(browser, player):
-
     # search the player needed
     searchPlayer(browser, player)
 
@@ -97,7 +94,6 @@ def getVsRhpCurrent(browser, player):
 
 
 def getVsLhpCurrent(browser, player):
-
     # search the player needed
     searchPlayer(browser, player)
 
@@ -123,7 +119,6 @@ def getVsLhpCurrent(browser, player):
 
 
 def getCareerSplits(browser, player):
-
     # search the player needed
     searchPlayer(browser, player)
 
@@ -148,7 +143,6 @@ def getCareerSplits(browser, player):
 
 
 def getLastxGames(browser, player, gamesNum):
-
     # search the player needed
     searchPlayer(browser, player)
 
