@@ -1,10 +1,8 @@
-from FantasyBaseballTrends import *
+from . import FantasyBaseballTrends as fbt
 import unittest
-from unittest.mock import patch, MagicMock
 from pandas.testing import assert_frame_equal
 import pandas as pd
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 
 
 class TestFunctions(unittest.TestCase):
@@ -21,35 +19,38 @@ class TestFunctions(unittest.TestCase):
     # test to see if the projected stats exist and returns data Frame
     def test_get2023Projected(self):
         self.assertEqual(
-            type(get2023Projected(self.driver, "Aaron Judge")), pd.DataFrame
+            type(fbt.get2023Projected(self.driver, "Aaron Judge")),
+            pd.DataFrame,
         )
 
     # test to see if last game stats exist
     def test_getLastGame(self):
         self.assertEqual(
-            type(getLastGame(self.driver, "Aaron Judge")), pd.DataFrame
+            type(fbt.getLastGame(self.driver, "Aaron Judge")), pd.DataFrame
         )
 
     # assert that only one row is returned
     def test_getLastGameShape(self):
-        self.assertEqual(getLastGame(self.driver, "Mike Trout").shape[0], 1)
+        self.assertEqual(
+            fbt.getLastGame(self.driver, "Mike Trout").shape[0], 1
+        )
 
     # test to see if Rhp Current stats exist
     def test_getRhpCurrent(self):
         self.assertEqual(
-            type(getVsRhpCurrent(self.driver, "Aaron Judge")), pd.DataFrame
+            type(fbt.getVsRhpCurrent(self.driver, "Aaron Judge")), pd.DataFrame
         )
 
     # test to see if Lhp Current stats exist
     def test_getLhpCurrent(self):
         self.assertEqual(
-            type(getVsLhpCurrent(self.driver, "Aaron Judge")), pd.DataFrame
+            type(fbt.getVsLhpCurrent(self.driver, "Aaron Judge")), pd.DataFrame
         )
 
     # test to see if carreer splits log exists
     def test_getCareerSplits(self):
         self.assertEqual(
-            type(getCareerSplits(self.driver, "Aaron Judge")), pd.DataFrame
+            type(fbt.getCareerSplits(self.driver, "Aaron Judge")), pd.DataFrame
         )
 
     def test_intget2023Projected(self):
@@ -57,7 +58,7 @@ class TestFunctions(unittest.TestCase):
             'FantasyBaseballTrends/tests/AaronJudgeProj.csv', index_col=0
         )
         assert_frame_equal(
-            get2023Projected(self.driver, "Aaron Judge"), testFrame
+            fbt.get2023Projected(self.driver, "Aaron Judge"), testFrame
         )
 
     def test_intgetLastGame(self):
@@ -67,7 +68,7 @@ class TestFunctions(unittest.TestCase):
             dtype=str,
         )
         assert_frame_equal(
-            getLastGame(self.driver, "Aaron Judge"),
+            fbt.getLastGame(self.driver, "Aaron Judge"),
             testFrame,
             check_dtype=False,
         )
@@ -77,7 +78,7 @@ class TestFunctions(unittest.TestCase):
             'FantasyBaseballTrends/tests/JudgeRhpCurrent.csv', index_col=0
         )
         assert_frame_equal(
-            getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame
+            fbt.getVsRhpCurrent(self.driver, "Aaron Judge"), testFrame
         )
 
     def test_intgetLhpCurrent(self):
@@ -85,7 +86,7 @@ class TestFunctions(unittest.TestCase):
             'FantasyBaseballTrends/tests/JudgeLhpCurrent.csv', index_col=0
         )
         assert_frame_equal(
-            getVsLhpCurrent(self.driver, "Aaron Judge"), testFrame
+            fbt.getVsLhpCurrent(self.driver, "Aaron Judge"), testFrame
         )
 
     def test_intgetCarrerSplits(self):
@@ -93,7 +94,7 @@ class TestFunctions(unittest.TestCase):
             'FantasyBaseballTrends/tests/JudgeCareerSplits.csv', index_col=0
         )
         assert_frame_equal(
-            getCareerSplits(self.driver, "Aaron Judge"), testFrame
+            fbt.getCareerSplits(self.driver, "Aaron Judge"), testFrame
         )
 
     def test_intgetLastxGames1(self):
@@ -103,7 +104,7 @@ class TestFunctions(unittest.TestCase):
             dtype=str,
         )
         assert_frame_equal(
-            getLastxGames(self.driver, "Aaron Judge", 5),
+            fbt.getLastxGames(self.driver, "Aaron Judge", 5),
             testFrame,
             check_dtype=False,
         )
@@ -115,7 +116,7 @@ class TestFunctions(unittest.TestCase):
             dtype=str,
         )
         assert_frame_equal(
-            getLastxGames(self.driver, "Aaron Judge", 10),
+            fbt.getLastxGames(self.driver, "Aaron Judge", 10),
             testFrame,
             check_dtype=False,
         )

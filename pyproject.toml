@@ -68,8 +68,7 @@ max-line-length = 120
 exclude=[
 ]
 per-file-ignores= [
-    'FantasyBaseballTrends/__init__.py:F401, F403',
-    'FantasyBaseballTrends/tests/test.py:F405, F403'
+    'FantasyBaseballTrends/__init__.py:F401, F403'
 ]
 
 
