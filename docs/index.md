@@ -22,7 +22,7 @@ pip install FantasyBaseballTrends
    :caption: Contents:
 
    README.md
-   fantasybaseballtrends.rst
+   source/modules
    CONTRIBUTING.md
 
 ```
