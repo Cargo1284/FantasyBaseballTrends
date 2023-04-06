@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 
 
 def setUpWebsite():
-    """Before using any function in this library, run this first to set up the website!
+    """
+    Before using any function in this library, run this first to set up the website!
 
     """
     global broswer
@@ -20,7 +21,8 @@ def setUpWebsite():
 
 
 def searchPlayer(browser, player):
-    """A function to search for a given player on the website.
+    """
+    A function to search for a given player on the website.
 
     Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
@@ -40,12 +42,13 @@ def searchPlayer(browser, player):
     return url
 
 
-def get2023Projected(browser: webdriver, player: str) -> pd.DataFrame:
-    """A function that retrieves the 2023 Projected Stats for a player.
+def get2023Projected(browser, player: str) -> pd.DataFrame:
+    """
+    A function that retrieves the 2023 Projected Stats for a player.
     Returns a pandas DataFrame that contains the information from the 2023 Projected stats table on baseball-reference.
 
     Args:
-        browser (webdriver): the browser that you are using, returned by setUpWebsite
+        browser : the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
 
     Returns:
@@ -68,12 +71,13 @@ def get2023Projected(browser: webdriver, player: str) -> pd.DataFrame:
     return projected
 
 
-def getLastGame(browser: webdriver, player: str) -> pd.DataFrame:
-    """A function that retrieves a players last game stats.
+def getLastGame(browser, player: str) -> pd.DataFrame:
+    """
+    A function that retrieves a players last game stats.
     Returns a pandas DataFrame that contains the stats from a players last game.
 
     Args:
-        browser (webdriver): the browser that you are using, returned by setUpWebsite
+        browser: the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
 
     Returns:
@@ -106,12 +110,13 @@ def getLastGame(browser: webdriver, player: str) -> pd.DataFrame:
     return lastGame
 
 
-def getVsRhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
-    """A function that retrieves a players current season stats against right handed pitching.
+def getVsRhpCurrent(browser, player: str) -> pd.DataFrame:
+    """
+    A function that retrieves a players current season stats against right handed pitching.
     Returns a pandas DataFrame that contains a players current season stats against right handed pitching.
     
     Args:
-        browser (webdriver): the browser that you are using, returned by setUpWebsite
+        browser: the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
     
     Returns:
@@ -143,12 +148,13 @@ def getVsRhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
     return statsVsRhp
 
 
-def getVsLhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
-    """A function that retrieves a players current season stats against left handed pitching.
+def getVsLhpCurrent(browser, player: str) -> pd.DataFrame:
+    """
+    A function that retrieves a players current season stats against left handed pitching.
     Returns a pandas DataFrame that contains a players current season stats left right handed pitching.
     
     Args:
-        browser (webdriver): the browser that you are using, returned by setUpWebsite
+        browser: the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
     
     Returns:
@@ -179,8 +185,9 @@ def getVsLhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
     return statsVsLhp
 
 
-def getCareerSplits(browser: webdriver, player: str) -> pd.DataFrame:
-    """A function that retrieves a players career stats against all pitching.
+def getCareerSplits(browser, player: str) -> pd.DataFrame:
+    """
+    A function that retrieves a players career stats against all pitching.
     Returns a pandas DataFrame that contains a players career stats against all pitching.
     
     Args:
@@ -214,8 +221,9 @@ def getCareerSplits(browser: webdriver, player: str) -> pd.DataFrame:
     return careerSplits
 
 
-def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFrame:
-    """A function that retrieves a players stats over gamesNum amount of games.
+def getLastxGames(browser, player: str, gamesNum: int) -> pd.DataFrame:
+    """
+    A function that retrieves a players stats over gamesNum amount of games.
     Returns a pandas DataFrame that contains a players stats in each of the last games.
     
     Args:
@@ -225,7 +233,7 @@ def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFram
     
     Returns:
         pandas.DataFrame: each row represents stats a game with their latest game as the last row
-        
+
     """
     # search the player needed
     searchPlayer(browser, player)
