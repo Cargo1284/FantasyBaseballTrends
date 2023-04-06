@@ -23,6 +23,6 @@ pip install FantasyBaseballTrends
 
    README.md
    CONTRIBUTING.md
-   FantasyBaseballTrends
+   fantasybaseballtrends.rst
 
 ```
