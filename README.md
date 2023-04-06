@@ -5,7 +5,7 @@
 ![Crates.io](https://img.shields.io/crates/l/ap)
 ![GitHub issues](https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends)
 [![PyPI](https://img.shields.io/pypi/v/FantasyBaseballTrends)](https://pypi.org/project/FantasyBaseballTrends/)
-[![readthedocs](https://img.shields.io/readthedocs/fantasybaseballtrends)](https://fantasybaseballtrends.readthedocs.io/en/latest/fantasybaseballtrends.html)
+[![readthedocs](https://img.shields.io/readthedocs/fantasybaseballtrends)](https://fantasybaseballtrends.readthedocs.io/en/latest)
 
 
 
