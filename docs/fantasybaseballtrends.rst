@@ -44,7 +44,3 @@ getLastxGames
 .. currentmodule:: FantasyBaseballTrends
 .. autofunction:: getLastxGames
 
-.. automodule:: FantasyBaseballTrends
-   :members:
-   :undoc-members:
-   :show-inheritance:
