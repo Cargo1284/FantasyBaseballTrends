@@ -3,47 +3,43 @@ FantasyBaseballTrends
 
 Functions
 ----------
+
+setUpWebsite
+-------------
 .. automodule:: FantasyBaseballTrends
-   :members:
-   :undoc-members:
-   :show-inheritance:
-..
-    setUpWebsite
-    -------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: setUpWebsite
+.. autofunction:: setUpWebsite
 
-    searchPlayer
-    -------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: searchPlayer
+searchPlayer
+-------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: searchPlayer
 
-    get2023Projected
-    -----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: get2023Projected
+get2023Projected
+-----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: get2023Projected
 
-    getLastGame
-    ----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: getLastGame
+getLastGame
+----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: getLastGame
 
-    getVsRhpCurrent
-    ----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: getVsRhpCurrent
+getVsRhpCurrent
+----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: getVsRhpCurrent
 
-    getVsLhpCurrent
-    ----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: getVsLhpCurrent
+getVsLhpCurrent
+----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: getVsLhpCurrent
 
-    getCareerSplits
-    ----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: getCareerSplits
+getCareerSplits
+----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: getCareerSplits
 
-    getLastxGames
-    ----------------
-    .. currentmodule:: FantasyBaseballTrends
-    .. autofunction:: getLastxGames
+getLastxGames
+----------------
+.. currentmodule:: FantasyBaseballTrends
+.. autofunction:: getLastxGames
