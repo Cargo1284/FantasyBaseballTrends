@@ -6,7 +6,7 @@ Functions
 
 setUpWebsite
 -------------
-.. automodule:: FantasyBaseballTrends
+.. currentmodule:: FantasyBaseballTrends
 .. autofunction:: setUpWebsite
 
 searchPlayer
