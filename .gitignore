@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Sphinx stuff
+docs/_build
+docs/_static
+docs/_templates
+
+
+

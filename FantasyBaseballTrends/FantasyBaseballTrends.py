@@ -113,7 +113,7 @@ def getVsRhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
     Returns:
         pandas.DataFrame: contains a players stats against all right handed pitchers and another row with stats against right handed starters
     """
-    
+
     # search the player needed
     searchPlayer(browser, player)
 
@@ -207,7 +207,9 @@ def getCareerSplits(browser: webdriver, player: str) -> pd.DataFrame:
     return careerSplits
 
 
-def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFrame:
+def getLastxGames(
+    browser: webdriver, player: str, gamesNum: int
+) -> pd.DataFrame:
     """A function that retrieves a players stats over gamesNum amount of games.
     Returns a pandas DataFrame that contains a players stats in each of the last games.
     
@@ -241,6 +243,7 @@ def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFram
     # print(lastxGames)
 
     return lastxGames
+
 
 # work on this part
 '''
@@ -305,7 +308,6 @@ def main():
     # Aaron_Judge.to_csv('JudgeLast10.csv')
 
     # maybe find one that gets the
-
 
     return
 
