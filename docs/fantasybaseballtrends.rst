@@ -7,12 +7,12 @@ Functions
 setUpWebsite
 -------------
 .. currentmodule:: FantasyBaseballTrends
-.. autofunction:: setUpWebsite
+.. autofunction:: FantasyBaseballTrends.setUpWebsite
 
 searchPlayer
 -------------
 .. currentmodule:: FantasyBaseballTrends
-.. autofunction:: searchPlayer
+.. autofunction:: FantasyBaseballTrends.searchPlayer
 
 get2023Projected
 -----------------
