@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 def setUpWebsite():
     """Before using any function in this library, run this first to set up the website!
+
     """
     global broswer
     browser = webdriver.Chrome()
@@ -27,6 +28,7 @@ def searchPlayer(browser, player):
 
     Returns:
         Url of the players home stats page
+
     """
     searchBox = browser.find_element(
         By.XPATH, '//*[@id="header"]/div[3]/form/div/div/input[2]'
@@ -48,6 +50,7 @@ def get2023Projected(browser: webdriver, player: str) -> pd.DataFrame:
 
     Returns:
         pandas.DataFrame: contains the projected stats
+
     """
 
     # search the player needed
@@ -75,6 +78,7 @@ def getLastGame(browser: webdriver, player: str) -> pd.DataFrame:
 
     Returns:
         pandas.DataFrame: contains a players last game stats
+
     """
     # search the player needed
     searchPlayer(browser, player)
@@ -112,6 +116,7 @@ def getVsRhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
     
     Returns:
         pandas.DataFrame: contains a players stats against all right handed pitchers and another row with stats against right handed starters
+
     """
 
     # search the player needed
@@ -148,6 +153,7 @@ def getVsLhpCurrent(browser: webdriver, player: str) -> pd.DataFrame:
     
     Returns:
         pandas.DataFrame: contains a players stats against all left handed pitchers and another row with stats against left handed starters
+
     """
     # search the player needed
     searchPlayer(browser, player)
@@ -183,6 +189,7 @@ def getCareerSplits(browser: webdriver, player: str) -> pd.DataFrame:
     
     Returns:
         pandas.DataFrame: each row represents stats against different handed starting pitchers and all pitchers
+
     """
     # search the player needed
     searchPlayer(browser, player)
@@ -218,6 +225,7 @@ def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFram
     
     Returns:
         pandas.DataFrame: each row represents stats a game with their latest game as the last row
+        
     """
     # search the player needed
     searchPlayer(browser, player)
