@@ -3,7 +3,7 @@ version: 2
 build:
   os: [macOS-lastest]
   tools:
-    python-version: [3.9]
+    python-version: [3.8]
 
 # Build from the docs/ directory with Sphinx
 sphinx:
