@@ -1,6 +1,8 @@
 import sphinx_rtd_theme
 from recommonmark.transform import AutoStructify
-
+import sys
+import os
+sys.path.insert(0, os.path.abspath("../FantasyBaseballTrends/FantasyBaseballTrends"))
 
 def setup(app):
     app.add_config_value('recommonmark_config', {
