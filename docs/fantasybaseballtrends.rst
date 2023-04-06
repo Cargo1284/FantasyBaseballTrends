@@ -1,50 +1,49 @@
 FantasyBaseballTrends
 ==============================================
 
+Functions
+----------
 .. automodule:: FantasyBaseballTrends
    :members:
    :undoc-members:
    :show-inheritance:
+..
+    setUpWebsite
+    -------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: setUpWebsite
 
-Functions
-----------
+    searchPlayer
+    -------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: searchPlayer
 
-setUpWebsite
--------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: setUpWebsite
+    get2023Projected
+    -----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: get2023Projected
 
-searchPlayer
--------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: searchPlayer
+    getLastGame
+    ----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: getLastGame
 
-get2023Projected
------------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: get2023Projected
+    getVsRhpCurrent
+    ----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: getVsRhpCurrent
 
-getLastGame
-----------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: getLastGame
+    getVsLhpCurrent
+    ----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: getVsLhpCurrent
 
-getVsRhpCurrent
-----------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: getVsRhpCurrent
+    getCareerSplits
+    ----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: getCareerSplits
 
-getVsLhpCurrent
-----------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: getVsLhpCurrent
-
-getCareerSplits
-----------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: getCareerSplits
-
-getLastxGames
-----------------
-.. currentmodule:: FantasyBaseballTrends
-.. autofunction:: getLastxGames
+    getLastxGames
+    ----------------
+    .. currentmodule:: FantasyBaseballTrends
+    .. autofunction:: getLastxGames
