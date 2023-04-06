@@ -6,22 +6,22 @@ Functions
 
 setUpWebsite
 -------------
-.. automodule:: FantasyBaseballTrends
+.. currentmodule:: FantasyBaseballTrends
 .. autofunction:: setUpWebsite
 
 searchPlayer
 -------------
-.. automodule:: FantasyBaseballTrends
+.. currentmodule:: FantasyBaseballTrends
 .. autofunction:: searchPlayer
 
 get2023Projected
 -----------------
-.. automodule:: FantasyBaseballTrends
+.. currentmodule:: FantasyBaseballTrends
 .. autofunction:: get2023Projected
 
 getLastGame
 ----------------
-.. automodule:: FantasyBaseballTrends
+.. currentmodule:: FantasyBaseballTrends
 .. autofunction:: getLastGame
 
 getVsRhpCurrent
