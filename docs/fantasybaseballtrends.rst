@@ -1,18 +1,23 @@
 FantasyBaseballTrends
 ==============================================
 
+.. automodule:: FantasyBaseballTrends
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Functions
 ----------
 
 setUpWebsite
 -------------
 .. currentmodule:: FantasyBaseballTrends
-.. autofunction:: FantasyBaseballTrends.setUpWebsite
+.. autofunction:: setUpWebsite
 
 searchPlayer
 -------------
 .. currentmodule:: FantasyBaseballTrends
-.. autofunction:: FantasyBaseballTrends.searchPlayer
+.. autofunction:: searchPlayer
 
 get2023Projected
 -----------------
