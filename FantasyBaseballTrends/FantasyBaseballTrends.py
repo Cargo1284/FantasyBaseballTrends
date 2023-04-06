@@ -21,7 +21,7 @@ def setUpWebsite():
 def searchPlayer(browser, player):
     """A function to search for a given player on the website.
 
-    Parameters:
+    Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
 
@@ -42,7 +42,7 @@ def get2023Projected(browser: webdriver, player: str) -> pd.DataFrame:
     """A function that retrieves the 2023 Projected Stats for a player.
     Returns a pandas DataFrame that contains the information from the 2023 Projected stats table on baseball-reference.
 
-    Parameters:
+    Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
 
@@ -69,7 +69,7 @@ def getLastGame(browser: webdriver, player: str) -> pd.DataFrame:
     """A function that retrieves a players last game stats.
     Returns a pandas DataFrame that contains the stats from a players last game.
 
-    Parameters:
+    Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
 
@@ -207,9 +207,7 @@ def getCareerSplits(browser: webdriver, player: str) -> pd.DataFrame:
     return careerSplits
 
 
-def getLastxGames(
-    browser: webdriver, player: str, gamesNum: int
-) -> pd.DataFrame:
+def getLastxGames(browser: webdriver, player: str, gamesNum: int) -> pd.DataFrame:
     """A function that retrieves a players stats over gamesNum amount of games.
     Returns a pandas DataFrame that contains a players stats in each of the last games.
     
