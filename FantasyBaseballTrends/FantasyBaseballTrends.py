@@ -6,8 +6,7 @@ from bs4 import BeautifulSoup
 
 
 def setUpWebsite():
-    """
-    Before using any function in this library, run this first to set up the website!
+    """Before using any function in this library, run this first to set up the website!
 
     """
     global broswer
@@ -21,8 +20,7 @@ def setUpWebsite():
 
 
 def searchPlayer(browser, player):
-    """
-    A function to search for a given player on the website.
+    """A function to search for a given player on the website.
 
     Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
