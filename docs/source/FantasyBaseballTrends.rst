@@ -43,4 +43,3 @@ getLastxGames
 ----------------
 .. automodule:: FantasyBaseballTrends
 .. autofunction:: FantasyBaseballTrends.getLastxGames
-
