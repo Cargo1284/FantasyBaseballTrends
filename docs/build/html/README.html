@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide &mdash; FantasyBaseballTrends 0.1.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contributing" href="CONTRIBUTING.html" />
+    <link rel="prev" title="Overview" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FantasyBaseballTrends
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalation">Instalation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#projected-stats">Projected Stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#last-game-stats">Last Game Stats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-stats-vs-rhp">Current stats vs RHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-stats-vs-lhp">Current stats vs LHP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#career-splits">Career Splits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stats-over-number-of-games">Stats over number of games</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FantasyBaseballTrends.html">FantasyBaseballTrends</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FantasyBaseballTrends</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guide">
+<h1>Guide<a class="headerlink" href="#guide" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/Cargo1284/FantasyBaseballTrends/actions?query=workflow%3A%22Build+Status%22"><img alt="Build Status" src="https://github.com/Cargo1284/FantasyBaseballTrends/workflows/Build%20Status/badge.svg?branch=main" /></a>
+<a class="reference external" href="https://app.codecov.io/gh/Cargo1284/FantasyBaseballTrends"><img alt="codecov" src="https://codecov.io/gh/Cargo1284/FantasyBaseballTrends/branch/main/graph/badge.svg" /></a>
+<img alt="Crates.io" src="https://img.shields.io/crates/l/ap" />
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends" />
+<a class="reference external" href="https://pypi.org/project/FantasyBaseballTrends/"><img alt="PyPI" src="https://img.shields.io/pypi/v/FantasyBaseballTrends" /></a>
+<a class="reference external" href="https://fantasybaseballtrends.readthedocs.io/en/latest"><img alt="readthedocs" src="https://img.shields.io/readthedocs/fantasybaseballtrends" /></a></p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>This library scrapes specific hitter stats from BaseballReference.
+The purpose of this library is to provide fantasy owners a chance to see how the players in their lineup have been performing over a number of games and how they perform against a certain pitcher. This will help facilitate their daily lineup constuction and to see which players on the wire are having a hot streak as well as players that have been trending downwards.</p>
+</section>
+<section id="instalation">
+<h2>Instalation<a class="headerlink" href="#instalation" title="Permalink to this heading">¶</a></h2>
+<p>To install, run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">FantasyBaseballTrends</span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
+<section id="projected-stats">
+<h3>Projected Stats<a class="headerlink" href="#projected-stats" title="Permalink to this heading">¶</a></h3>
+<p>This function will return a specific hitters projected offensive stats for the 2023 season.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">get2023Projected</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="last-game-stats">
+<h3>Last Game Stats<a class="headerlink" href="#last-game-stats" title="Permalink to this heading">¶</a></h3>
+<p>This function will return all of offensive stats of a players most recent game.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getLastGame</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="current-stats-vs-rhp">
+<h3>Current stats vs RHP<a class="headerlink" href="#current-stats-vs-rhp" title="Permalink to this heading">¶</a></h3>
+<p>This function will return a players current season hitting stats against right handed pitchers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getVsRhpCurrent</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="current-stats-vs-lhp">
+<h3>Current stats vs LHP<a class="headerlink" href="#current-stats-vs-lhp" title="Permalink to this heading">¶</a></h3>
+<p>This function will return a players current season hitting stats against left handed pitchers.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getVsLhpCurrent</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="career-splits">
+<h3>Career Splits<a class="headerlink" href="#career-splits" title="Permalink to this heading">¶</a></h3>
+<p>This function will return a hitter’s carrer splits. The returning data frame is split up by the opposing pitchers handedness and if they are a starter or not.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getCareerSplits</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="stats-over-number-of-games">
+<h3>Stats over number of games<a class="headerlink" href="#stats-over-number-of-games" title="Permalink to this heading">¶</a></h3>
+<p>This funciton will return a hitter’s stats over a user specified number of games.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">getLastxGames</span><span class="p">(</span><span class="n">browser</span><span class="p">,</span> <span class="n">player</span><span class="p">,</span> <span class="n">gamesNum</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CONTRIBUTING.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Carlos Gonzalez-Romero.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
