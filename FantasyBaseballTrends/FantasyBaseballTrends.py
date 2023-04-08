@@ -5,6 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 
 
+
 def setUpWebsite():
     """
     Before using any function in this library, run this first to set up the website! 
