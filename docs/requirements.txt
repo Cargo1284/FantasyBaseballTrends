@@ -1,2 +1,0 @@
-FantasyBaseballTrends==0.0.1
-selenium==4.8.2
