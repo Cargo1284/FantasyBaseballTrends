@@ -16,6 +16,7 @@ pip install FantasyBaseballTrends
    README.md
    CONTRIBUTING.md
    FantasyBaseballTrends.md
+   examples.md
 
 
 ```
