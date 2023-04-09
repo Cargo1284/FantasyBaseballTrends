@@ -5,7 +5,7 @@
 ![Crates.io](https://img.shields.io/crates/l/ap)
 ![GitHub issues](https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends)
 [![PyPI](https://img.shields.io/pypi/v/FantasyBaseballTrends)](https://pypi.org/project/FantasyBaseballTrends/)
-[![Github Pages Docs](https://img.shields.io/badge/docs-gh--pages-blue)](https://mjk2244.github.io/pro-football-reference-web-scraper/)
+[![Github Pages Docs](https://img.shields.io/badge/docs-gh--pages-blue)](https://cmg2249.github.io/FantasyBaseballTrends/)
 [![readthedocs](https://img.shields.io/readthedocs/fantasybaseballtrends)](https://fantasybaseballtrends.readthedocs.io/en/latest)
 
 
