@@ -20,18 +20,18 @@ class TestFunctions(unittest.TestCase):
             type(fbt.get2023Season(self.driver, "Aaron Judge")),
             pd.DataFrame,
         )
-    
+
     def test_getCareer(self):
         self.assertEqual(
             type(fbt.getCareer(self.driver, "Aaron Judge")),
             pd.DataFrame,
         )
-    
+
     def test_getPostseasonStats(self):
-            self.assertEqual(
-                type(fbt.getPostseasonStats(self.driver, "Aaron Judge")),
-                pd.DataFrame,
-            )
+        self.assertEqual(
+            type(fbt.getPostseasonStats(self.driver, "Aaron Judge")),
+            pd.DataFrame,
+        )
 
     # test to see if last game stats exist
     def test_getLastGame(self):
@@ -90,7 +90,7 @@ class TestFunctions(unittest.TestCase):
         assert_frame_equal(
             fbt.getPostseasonStats(self.driver, "Aaron Judge"), testFrame
         )
-    
+
     def test_intgetCareer(self):
         testFrame = pd.read_csv(
             'FantasyBaseballTrends/tests/AaronJudgeCareer.csv', index_col=0
