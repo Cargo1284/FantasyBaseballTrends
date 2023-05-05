@@ -1,12 +1,12 @@
 # FantasyBaseballTrends
 
 [![Build Status](https://github.com/Cargo1284/FantasyBaseballTrends/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/Cargo1284/FantasyBaseballTrends/actions?query=workflow%3A%22Build+Status%22)
+![PyPI](https://img.shields.io/pypi/v/FantasyBaseballTrends?style=plastic)
 [![codecov](https://codecov.io/gh/Cargo1284/FantasyBaseballTrends/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Cargo1284/FantasyBaseballTrends)
 ![Crates.io](https://img.shields.io/crates/l/ap)
 ![GitHub issues](https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends)
-[![PyPI](https://img.shields.io/pypi/v/FantasyBaseballTrends)](https://pypi.org/project/FantasyBaseballTrends/)
 [![Github Pages Docs](https://img.shields.io/badge/docs-gh--pages-blue)](https://cargo1284.github.io/FantasyBaseballTrends/)
-[![readthedocs](https://img.shields.io/readthedocs/fantasybaseballtrends)](https://fantasybaseballtrends.readthedocs.io/en/latest)
+
 
 
 
