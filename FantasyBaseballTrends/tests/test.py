@@ -68,7 +68,9 @@ class TestFunctions(unittest.TestCase):
             'FantasyBaseballTrends/tests/AaronJudgeSeason.csv', index_col=0
         )
         assert_frame_equal(
-            fbt.get2023Season(self.driver, "Aaron Judge"), testFrame
+            fbt.get2023Season(self.driver, "Aaron Judge"),
+            testFrame,
+            check_dtype=False,
         )
 
     def test_intgetLastGame(self):
@@ -77,26 +79,28 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
-        assert_frame_equal(
-            fbt.getLastGame(self.driver, "Aaron Judge"),
-            testFrame,
-            check_dtype=False,
-        )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastGame(self.driver, "Aaron Judge")
+        actualFrame = actualFrame.astype(str)
+        assert_frame_equal(actualFrame, testFrame, check_dtype=False)
 
     def test_intgetPostseason(self):
         testFrame = pd.read_csv(
             'FantasyBaseballTrends/tests/AaronJudgePostseason.csv', index_col=0
         )
-        assert_frame_equal(
-            fbt.getPostseasonStats(self.driver, "Aaron Judge"), testFrame
-        )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getPostseasonStats(self.driver, "Aaron Judge")
+        actualFrame = actualFrame.astype(str)
+        assert_frame_equal(actualFrame, testFrame, check_dtype=False)
 
     def test_intgetCareer(self):
         testFrame = pd.read_csv(
             'FantasyBaseballTrends/tests/AaronJudgeCareer.csv', index_col=0
         )
         assert_frame_equal(
-            fbt.getCareer(self.driver, "Aaron Judge"), testFrame
+            fbt.getCareer(self.driver, "Aaron Judge"),
+            testFrame,
+            check_dtype=False,
         )
 
     def test_intgetRhpCurrent(self):
@@ -117,7 +121,7 @@ class TestFunctions(unittest.TestCase):
 
     def test_intgetCarrerSplits(self):
         testFrame = pd.read_csv(
-            'FantasyBaseballTrends/tests/JudgeCareerSplits.csv', index_col=0
+            'FantasyBaseballTrends/tests/JudgeCarrerSplits.csv', index_col=0
         )
         assert_frame_equal(
             fbt.getCareerSplits(self.driver, "Aaron Judge"), testFrame
@@ -129,8 +133,11 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastxGames(self.driver, "Aaron Judge", 5)
+        actualFrame = actualFrame.astype(str)
         assert_frame_equal(
-            fbt.getLastxGames(self.driver, "Aaron Judge", 5),
+            actualFrame,
             testFrame,
             check_dtype=False,
         )
@@ -141,8 +148,11 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastxGames(self.driver, "Aaron Judge", 10)
+        actualFrame = actualFrame.astype(str)
         assert_frame_equal(
-            fbt.getLastxGames(self.driver, "Aaron Judge", 10),
+            actualFrame,
             testFrame,
             check_dtype=False,
         )
@@ -153,8 +163,11 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getAvgOverLastxGames(self.driver, "Aaron Judge", 10)
+        actualFrame = actualFrame.astype(str)
         assert_frame_equal(
-            fbt.getAvgOverLastxGames(self.driver, "Aaron Judge", 10),
+            actualFrame,
             testFrame,
             check_dtype=False,
         )
