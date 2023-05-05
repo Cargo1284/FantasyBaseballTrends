@@ -25,20 +25,51 @@ def searchPlayer(browser, player):
     return url
 
 
-def get2023Projected(browser, player):
+def get2023Season(browser, player):
     # search the player needed
     searchPlayer(browser, player)
 
     # parse the page to get the projected 2023 stats table and return it
+    # soup = BeautifulSoup(browser.page_source, features="lxml")
+    # stats = soup.find("table", {"id": "batting_proj"})
+    # table = pd.read_html(str(stats))
+    # projected = table[0]
+    # # print(projected)
+
+    # get the last row of the table and print out the stats for last game
     soup = BeautifulSoup(browser.page_source, features="lxml")
-    stats = soup.find("table", {"id": "batting_proj"})
+    stats = soup.find("table", {"id": "batting_standard"})
     table = pd.read_html(str(stats))
-    projected = table[0]
-    # print(projected)
+    seasonStats = table[0].iloc[-3, 3:] 
+    seasonStats = seasonStats.to_frame()
+    seasonStats = seasonStats.transpose()
 
     # projected.to_csv('AaronJudgeProj.csv')
 
-    return projected
+    return seasonStats
+
+def getCareer(browser, player):
+    # search the player needed
+    searchPlayer(browser, player)
+
+    # parse the page to get the projected 2023 stats table and return it
+    # soup = BeautifulSoup(browser.page_source, features="lxml")
+    # stats = soup.find("table", {"id": "batting_proj"})
+    # table = pd.read_html(str(stats))
+    # projected = table[0]
+    # # print(projected)
+
+    # get the last row of the table and print out the stats for last game
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "batting_standard"})
+    table = pd.read_html(str(stats))
+    seasonStats = table[0].iloc[-2, 3:]
+    seasonStats = seasonStats.to_frame()
+    seasonStats = seasonStats.transpose()
+
+    # projected.to_csv('AaronJudgeProj.csv')
+
+    return seasonStats
 
 
 def getLastGame(browser, player):
@@ -48,7 +79,7 @@ def getLastGame(browser, player):
     # get to the link for 2022 stats,
     # will have to change once 2023 season starts
     link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a'
+        By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[8]/a'
     )
     statsLink = link.get_attribute('href')
 
@@ -66,6 +97,31 @@ def getLastGame(browser, player):
     # print(lastGame.shape)
 
     return lastGame
+
+def getPostseasonStats(browser, player):
+    searchPlayer(browser, player)
+
+    link = browser.find_element(
+        By.XPATH, '//*[@id="inner_nav"]/ul/li[5]/div/ul[1]/li[9]/a'
+    )
+    statsLink = link.get_attribute('href')
+
+    # load the new page
+    browser.get(statsLink)
+
+    # get the last row of the table and print out the stats for last game
+    soup = BeautifulSoup(browser.page_source, features="lxml")
+    stats = soup.find("table", {"id": "batting_gamelogs_post"})
+    table = pd.read_html(str(stats))
+    postseason = table[0].iloc[:, 2:] 
+    
+    postseason = postseason.transpose()
+
+    # print(lastGame.shape)
+
+    return postseason
+
+    
 
 
 def getVsRhpCurrent(browser, player):
@@ -149,7 +205,7 @@ def getLastxGames(browser, player, gamesNum):
     # get to the link for 2022 stats,
     # will have to change once 2023 season starts
     link = browser.find_element(
-        By.XPATH, '//*[@id="bottom_nav_container"]/ul[2]/li[7]/a'
+        By.XPATH, '//*[@id="inner_nav"]/ul/li[5]/div/ul[1]/li[8]/a'
     )
     statsLink = link.get_attribute('href')
 
@@ -159,6 +215,7 @@ def getLastxGames(browser, player, gamesNum):
     # get the last row of the table and print out the stats for last game
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_gamelogs"})
+    #stats = soup.find(id = "batting_gamelogs")
     table = pd.read_html(str(stats))
     lastxGames = table[0].iloc[-gamesNum - 1 : -1, 3:]
 
@@ -168,21 +225,23 @@ def getLastxGames(browser, player, gamesNum):
 
 
 # work on this part
-'''
+
 def getAvgOverLastXGames(browser, player, gamesNum):
     xGames = getLastxGames(browser, player, gamesNum)
     avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
 
-    #print(avgXGames)
+    return avgXGames
 
-    return(avgXGames)
-'''
 
 
 def main():
     # global browser
 
-    # browser = setUpWebsite()
+    browser = setUpWebsite()
+    print(get2023Season(browser, "Aaron Judge"))
+    # print(getLastxGames(browser, "Aaron Judge", 7))
+    # print(getAvgOverLastXGames(browser, "Aaron Judge", 7))
+
 
     # browser = webdriver.Chrome()
 
@@ -201,7 +260,7 @@ def main():
 
     # print(get2023Projected("Aaron Judge"))
     # getLastGame(browser, search)
-    # getVsRhpCurrent(browser, search)
+    # getVsRhpCurrent(browser, "Gleyber Torres")
     # getVsLhpCurrent(browser, search)
     # getCareerSplits(browser, search)
     # getAvgOverLastXGames(browser, search, 5)
