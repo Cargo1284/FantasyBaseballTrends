@@ -340,7 +340,7 @@ def getLastxGames(browser, player, gamesNum):
 # work on this part
 
 
-def getAvgOverLastXGames(browser, player, gamesNum):
+def getAvgOverLastxGames(browser, player, gamesNum):
     """
     A function that retrieves the players avg stats over 'gamesNum' amount of games.
     Returns a pandas DataFrame that contains a players avg stats over the last games.
@@ -363,7 +363,7 @@ def getAvgOverLastXGames(browser, player, gamesNum):
 def main():
     # global browser
 
-    # browser = setUpWebsite()
+    browser = setUpWebsite()
     # print(get2023Season(browser, "Aaron Judge"))
     # print(getLastxGames(browser, "Aaron Judge", 7))
     # print(getAvgOverLastXGames(browser, "Aaron Judge", 7))
@@ -392,26 +392,35 @@ def main():
 
     # get a save the csv's for aaron judge and mike trout for each function
 
-    # Aaron_Judge = get2023Projected("Aaron Judge")
-    # Aaron_Judge.to_csv('AaronJudgeProj.csv')
+    Aaron_Judge = get2023Season(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('AaronJudgeSeason.csv')
 
-    # Aaron_Judge = getLastGame("Aaron Judge")
-    # Aaron_Judge.to_csv('JudgeLastGame.csv')
+    Aaron_Judge = getCareer(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('AaronJudgeCareer.csv')
 
-    # Aaron_Judge = getVsRhpCurrent("Aaron Judge")
-    # Aaron_Judge.to_csv('JudgeRhpCurrent.csv')
+    Aaron_Judge = getPostseasonStats(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('AaronJudgePostseason.csv')
 
-    # Aaron_Judge = getVsLhpCurrent("Aaron Judge")
-    # Aaron_Judge.to_csv('JudgeLhpCurrent.csv')
+    Aaron_Judge = getLastGame(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('JudgeLastGame.csv')
 
-    # Aaron_Judge = getCareerSplits("Aaron Judge")
-    # Aaron_Judge.to_csv('JudgeCarrerSplits.csv')
+    Aaron_Judge = getVsRhpCurrent(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('JudgeRhpCurrent.csv')
 
-    # Aaron_Judge = getLastxGames("Aaron Judge", 5)
-    # Aaron_Judge.to_csv('JudgeLast5.csv')
+    Aaron_Judge = getVsLhpCurrent(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('JudgeLhpCurrent.csv')
 
-    # Aaron_Judge = getLastxGames("Aaron Judge", 10)
-    # Aaron_Judge.to_csv('JudgeLast10.csv')
+    Aaron_Judge = getCareerSplits(browser, "Aaron Judge")
+    Aaron_Judge.to_csv('JudgeCarrerSplits.csv')
+
+    Aaron_Judge = getLastxGames(browser, "Aaron Judge", 5)
+    Aaron_Judge.to_csv('JudgeLast5.csv')
+
+    Aaron_Judge = getLastxGames(browser, "Aaron Judge", 10)
+    Aaron_Judge.to_csv('JudgeLast10.csv')
+
+    Aaron_Judge = getAvgOverLastxGames(browser, "Aaron Judge", 10)
+    Aaron_Judge.to_csv('JudgeLast10Avg.csv')
 
     # maybe find one that gets the
 
