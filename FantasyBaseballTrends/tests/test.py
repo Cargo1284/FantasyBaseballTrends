@@ -15,9 +15,21 @@ class TestFunctions(unittest.TestCase):
         self.driver.get("https://www.baseball-reference.com/")
 
     # test to see if the projected stats exist and returns data Frame
-    def test_get2023Projected(self):
+    def test_get2023Season(self):
         self.assertEqual(
-            type(fbt.get2023Projected(self.driver, "Aaron Judge")),
+            type(fbt.get2023Season(self.driver, "Aaron Judge")),
+            pd.DataFrame,
+        )
+
+    def test_getCareer(self):
+        self.assertEqual(
+            type(fbt.getCareer(self.driver, "Aaron Judge")),
+            pd.DataFrame,
+        )
+
+    def test_getPostseasonStats(self):
+        self.assertEqual(
+            type(fbt.getPostseasonStats(self.driver, "Aaron Judge")),
             pd.DataFrame,
         )
 
@@ -51,12 +63,14 @@ class TestFunctions(unittest.TestCase):
             type(fbt.getCareerSplits(self.driver, "Aaron Judge")), pd.DataFrame
         )
 
-    def test_intget2023Projected(self):
+    def test_intget2023Season(self):
         testFrame = pd.read_csv(
-            'FantasyBaseballTrends/tests/AaronJudgeProj.csv', index_col=0
+            'FantasyBaseballTrends/tests/AaronJudgeSeason.csv', index_col=0
         )
         assert_frame_equal(
-            fbt.get2023Projected(self.driver, "Aaron Judge"), testFrame
+            fbt.get2023Season(self.driver, "Aaron Judge"),
+            testFrame,
+            check_dtype=False,
         )
 
     def test_intgetLastGame(self):
@@ -65,8 +79,26 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastGame(self.driver, "Aaron Judge")
+        actualFrame = actualFrame.astype(str)
+        assert_frame_equal(actualFrame, testFrame, check_dtype=False)
+
+    def test_intgetPostseason(self):
+        testFrame = pd.read_csv(
+            'FantasyBaseballTrends/tests/AaronJudgePostseason.csv', index_col=0
+        )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getPostseasonStats(self.driver, "Aaron Judge")
+        actualFrame = actualFrame.astype(str)
+        assert_frame_equal(actualFrame, testFrame, check_dtype=False)
+
+    def test_intgetCareer(self):
+        testFrame = pd.read_csv(
+            'FantasyBaseballTrends/tests/AaronJudgeCareer.csv', index_col=0
+        )
         assert_frame_equal(
-            fbt.getLastGame(self.driver, "Aaron Judge"),
+            fbt.getCareer(self.driver, "Aaron Judge"),
             testFrame,
             check_dtype=False,
         )
@@ -89,7 +121,7 @@ class TestFunctions(unittest.TestCase):
 
     def test_intgetCarrerSplits(self):
         testFrame = pd.read_csv(
-            'FantasyBaseballTrends/tests/JudgeCareerSplits.csv', index_col=0
+            'FantasyBaseballTrends/tests/JudgeCarrerSplits.csv', index_col=0
         )
         assert_frame_equal(
             fbt.getCareerSplits(self.driver, "Aaron Judge"), testFrame
@@ -101,8 +133,11 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastxGames(self.driver, "Aaron Judge", 5)
+        actualFrame = actualFrame.astype(str)
         assert_frame_equal(
-            fbt.getLastxGames(self.driver, "Aaron Judge", 5),
+            actualFrame,
             testFrame,
             check_dtype=False,
         )
@@ -113,10 +148,19 @@ class TestFunctions(unittest.TestCase):
             index_col=0,
             dtype=str,
         )
+        testFrame = testFrame.astype(str)
+        actualFrame = fbt.getLastxGames(self.driver, "Aaron Judge", 10)
+        actualFrame = actualFrame.astype(str)
         assert_frame_equal(
-            fbt.getLastxGames(self.driver, "Aaron Judge", 10),
+            actualFrame,
             testFrame,
             check_dtype=False,
+        )
+
+    def test_intgetAvgOverLastxGames(self):
+        self.assertEqual(
+            type(fbt.getAvgOverLastxGames(self.driver, "Aaron Judge", 10)),
+            pd.DataFrame,
         )
 
     # make a teardown
