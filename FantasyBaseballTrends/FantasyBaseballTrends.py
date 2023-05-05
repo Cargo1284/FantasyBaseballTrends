@@ -198,7 +198,7 @@ def getVsRhpCurrent(browser, player):
         player (str): the player whose stats you are trying to retrieve
 
     Returns:
-        pandas.DataFrame: contains a players stats against all right handed pitchers and another row with stats against right handed starters
+        pandas.DataFrame: contains stats against all right handed pitchers split by starter and reliever
 
     """
     # search the player needed
@@ -235,7 +235,7 @@ def getVsLhpCurrent(browser, player):
         player (str): the player whose stats you are trying to retrieve
 
     Returns:
-        pandas.DataFrame: contains a players stats against all left handed pitchers and another row with stats against left handed starters
+        pandas.DataFrame: contains stats against all left handed pitchers split by starter and reliever
 
     """
     # search the player needed
