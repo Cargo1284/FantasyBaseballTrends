@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 def setUpWebsite():
     """
-    Before using any function in this library, run this first to set up the website! 
+    Before using any function in this library, run this first to set up the website!
     This function sets up baseball-reference and returns the browser.
 
     """
@@ -67,13 +67,14 @@ def get2023Season(browser, player):
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_standard"})
     table = pd.read_html(str(stats))
-    seasonStats = table[0].iloc[-3, 3:] 
+    seasonStats = table[0].iloc[-3, 3:]
     seasonStats = seasonStats.to_frame()
     seasonStats = seasonStats.transpose()
 
     # projected.to_csv('AaronJudgeProj.csv')
 
     return seasonStats
+
 
 def getCareer(browser, player):
     """
@@ -149,6 +150,7 @@ def getLastGame(browser, player):
 
     return lastGame
 
+
 def getPostseasonStats(browser, player):
     """
     A function that retrieves the Postseason stats for a player.
@@ -162,7 +164,7 @@ def getPostseasonStats(browser, player):
         pandas.DataFrame: contains the postseason stats
 
     """
-    
+
     searchPlayer(browser, player)
 
     link = browser.find_element(
@@ -177,26 +179,24 @@ def getPostseasonStats(browser, player):
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_gamelogs_post"})
     table = pd.read_html(str(stats))
-    postseason = table[0].iloc[:, 2:] 
-    
+    postseason = table[0].iloc[:, 2:]
+
     postseason = postseason.transpose()
 
     # print(lastGame.shape)
 
     return postseason
 
-    
-
 
 def getVsRhpCurrent(browser, player):
     """
     A function that retrieves a players current season stats against right handed pitching.
     Returns a pandas DataFrame that contains a players current season stats against right handed pitching.
-    
+
     Args:
         browser: the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
-    
+
     Returns:
         pandas.DataFrame: contains a players stats against all right handed pitchers and another row with stats against right handed starters
 
@@ -229,11 +229,11 @@ def getVsLhpCurrent(browser, player):
     """
     A function that retrieves a players current season stats against left handed pitching.
     Returns a pandas DataFrame that contains a players current season stats left right handed pitching.
-    
+
     Args:
         browser: the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
-    
+
     Returns:
         pandas.DataFrame: contains a players stats against all left handed pitchers and another row with stats against left handed starters
 
@@ -266,11 +266,11 @@ def getCareerSplits(browser, player):
     """
     A function that retrieves a players career stats against all pitching.
     Returns a pandas DataFrame that contains a players career stats against all pitching.
-    
+
     Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
-    
+
     Returns:
         pandas.DataFrame: each row represents stats against different handed starting pitchers and all pitchers
 
@@ -302,12 +302,12 @@ def getLastxGames(browser, player, gamesNum):
     """
     A function that retrieves a players stats over gamesNum amount of games.
     Returns a pandas DataFrame that contains a players stats in each of the last games.
-    
+
     Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
         gamesNum (int): how many games do retrieve stats for
-    
+
     Returns:
         pandas.DataFrame: each row represents stats a game with their latest game as the last row
 
@@ -328,7 +328,7 @@ def getLastxGames(browser, player, gamesNum):
     # get the last row of the table and print out the stats for last game
     soup = BeautifulSoup(browser.page_source, features="lxml")
     stats = soup.find("table", {"id": "batting_gamelogs"})
-    #stats = soup.find(id = "batting_gamelogs")
+    # stats = soup.find(id = "batting_gamelogs")
     table = pd.read_html(str(stats))
     lastxGames = table[0].iloc[-gamesNum - 1 : -1, 3:]
 
@@ -339,25 +339,25 @@ def getLastxGames(browser, player, gamesNum):
 
 # work on this part
 
+
 def getAvgOverLastXGames(browser, player, gamesNum):
     """
     A function that retrieves the players avg stats over 'gamesNum' amount of games.
     Returns a pandas DataFrame that contains a players avg stats over the last games.
-    
+
     Args:
         browser (webdriver): the browser that you are using, returned by setUpWebsite
         player (str): the player whose stats you are trying to retrieve
         gamesNum (int): how many games do retrieve stats for
-    
+
     Returns:
         pandas.DataFrame: shows the average of that stat over specified number of games
 
     """
     xGames = getLastxGames(browser, player, gamesNum)
-    avgXGames = xGames.mean(axis=0,numeric_only=True,skipna=True)
+    avgXGames = xGames.mean(axis=0, numeric_only=True, skipna=True)
 
     return avgXGames
-
 
 
 def main():
@@ -367,7 +367,6 @@ def main():
     # print(get2023Season(browser, "Aaron Judge"))
     # print(getLastxGames(browser, "Aaron Judge", 7))
     # print(getAvgOverLastXGames(browser, "Aaron Judge", 7))
-
 
     # browser = webdriver.Chrome()
 
