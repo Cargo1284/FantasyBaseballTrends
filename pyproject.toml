@@ -11,7 +11,7 @@ name = "FantasyBaseballTrends"
 authors = [{name = "Carlos Gonzalez-Romero", email = "cmg2249@columbia.edu"}]
 description="Library that helps you search for baseball players stats and trends in order to help with fantasy lineup construction"
 readme = "README.md"
-version = "0.0.1"
+version = "0.1.2"
 requires-python = ">=3.7"
 
 dependencies = [ 
