@@ -65,9 +65,9 @@ class TestFunctions(unittest.TestCase):
 
     def test_intget2023Season(self):
         testFrame = pd.read_csv(
-            'FantasyBaseballTrends/tests/MolinaSeason.csv', 
+            'FantasyBaseballTrends/tests/MolinaSeason.csv',
             index_col=0,
-            dtype=str
+            dtype=str,
         )
         assert_frame_equal(
             fbt.get2023Season(self.driver, "Yadier Molina"),
@@ -79,7 +79,7 @@ class TestFunctions(unittest.TestCase):
         testFrame = pd.read_csv(
             'FantasyBaseballTrends/tests/MolinaLastGame.csv',
             index_col=0,
-            dtype=str
+            dtype=str,
         )
         testFrame = testFrame.astype(str)
         actualFrame = fbt.getLastGame(self.driver, "Yadier Molina")
@@ -97,9 +97,9 @@ class TestFunctions(unittest.TestCase):
 
     def test_intgetCareer(self):
         testFrame = pd.read_csv(
-            'FantasyBaseballTrends/tests/MolinaCareer.csv', 
-            index_col=0, 
-            dtype=str
+            'FantasyBaseballTrends/tests/MolinaCareer.csv',
+            index_col=0,
+            dtype=str,
         )
         assert_frame_equal(
             fbt.getCareer(self.driver, "Yadier Molina"),
