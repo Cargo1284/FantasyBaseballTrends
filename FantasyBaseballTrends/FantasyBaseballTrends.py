@@ -359,71 +359,71 @@ def getAvgOverLastxGames(browser, player, gamesNum):
     return avgXGames
 
 
-def main():
-    # global browser
+# def main():
+#     # global browser
 
-    browser = setUpWebsite()
-    # print(get2023Season(browser, "Yadier Molina"))
-    # print(getLastxGames(browser, "Aaron Judge", 7))
-    # print(getAvgOverLastXGames(browser, "Aaron Judge", 7))
+#     browser = setUpWebsite()
+#     # print(get2023Season(browser, "Yadier Molina"))
+#     # print(getLastxGames(browser, "Aaron Judge", 7))
+#     # print(getAvgOverLastXGames(browser, "Aaron Judge", 7))
 
-    # browser = webdriver.Chrome()
+#     # browser = webdriver.Chrome()
 
-    # browser.get("https://www.baseball-reference.com/")
+#     # browser.get("https://www.baseball-reference.com/")
 
-    # print("hello")
+#     # print("hello")
 
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('headless')
-    # browser = webdriver.Chrome(options=options)
+#     # options = webdriver.ChromeOptions()
+#     # options.add_argument('headless')
+#     # browser = webdriver.Chrome(options=options)
 
-    # browser = webdriver.Chrome()
+#     # browser = webdriver.Chrome()
 
-    # browser.get("https://www.baseball-reference.com/")
-    # search = input("Which player to search for: ")
+#     # browser.get("https://www.baseball-reference.com/")
+#     # search = input("Which player to search for: ")
 
-    # print(get2023Projected("Aaron Judge"))
-    # getLastGame(browser, search)
-    # getVsRhpCurrent(browser, "Gleyber Torres")
-    # getVsLhpCurrent(browser, search)
-    # getCareerSplits(browser, search)
-    # getAvgOverLastXGames(browser, search, 5)
+#     # print(get2023Projected("Aaron Judge"))
+#     # getLastGame(browser, search)
+#     # getVsRhpCurrent(browser, "Gleyber Torres")
+#     # getVsLhpCurrent(browser, search)
+#     # getCareerSplits(browser, search)
+#     # getAvgOverLastXGames(browser, search, 5)
 
-    # get a save the csv's for aaron judge and mike trout for each function
+#     # get a save the csv's for aaron judge and mike trout for each function
 
-    Yadier_Molina = get2023Season(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaSeason.csv')
+#     Yadier_Molina = get2023Season(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaSeason.csv')
 
-    Yadier_Molina = getCareer(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaCareer.csv')
+#     Yadier_Molina = getCareer(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaCareer.csv')
 
-    Yadier_Molina = getPostseasonStats(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaPostseason.csv')
+#     Yadier_Molina = getPostseasonStats(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaPostseason.csv')
 
-    Yadier_Molina = getLastGame(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaLastGame.csv')
+#     Yadier_Molina = getLastGame(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaLastGame.csv')
 
-    Yadier_Molina = getVsRhpCurrent(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaRhpCurrent.csv')
+#     Yadier_Molina = getVsRhpCurrent(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaRhpCurrent.csv')
 
-    Yadier_Molina = getVsLhpCurrent(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaLhpCurrent.csv')
+#     Yadier_Molina = getVsLhpCurrent(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaLhpCurrent.csv')
 
-    Yadier_Molina = getCareerSplits(browser, "Yadier Molina")
-    Yadier_Molina.to_csv('MolinaCarrerSplits.csv')
+#     Yadier_Molina = getCareerSplits(browser, "Yadier Molina")
+#     Yadier_Molina.to_csv('MolinaCarrerSplits.csv')
 
-    Yadier_Molina = getLastxGames(browser, "Yadier Molina", 5)
-    Yadier_Molina.to_csv('MolinaLast5.csv')
+#     Yadier_Molina = getLastxGames(browser, "Yadier Molina", 5)
+#     Yadier_Molina.to_csv('MolinaLast5.csv')
 
-    Yadier_Molina = getLastxGames(browser, "Yadier Molina", 10)
-    Yadier_Molina.to_csv('MolinaLast10.csv')
+#     Yadier_Molina = getLastxGames(browser, "Yadier Molina", 10)
+#     Yadier_Molina.to_csv('MolinaLast10.csv')
 
-    Yadier_Molina = getAvgOverLastxGames(browser, "Yadier Molina", 10)
-    Yadier_Molina.to_csv('MolinaLast10Avg.csv')
+#     Yadier_Molina = getAvgOverLastxGames(browser, "Yadier Molina", 10)
+#     Yadier_Molina.to_csv('MolinaLast10Avg.csv')
 
-    # maybe find one that gets the
+#     # maybe find one that gets the
 
-    return
+#     return
 
 
-main()
+# main()
