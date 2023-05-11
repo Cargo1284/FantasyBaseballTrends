@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FantasyBaseballTrends &mdash; FantasyBaseballTrends 0.1.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Contributing" href="CONTRIBUTING.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            FantasyBaseballTrends
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FantasyBaseballTrends</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setupwebsite">setUpWebsite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#searchplayer">searchPlayer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get2023season">get2023Season</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getlastgame">getLastGame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getvsrhpcurrent">getVsRhpCurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getvslhpcurrent">getVsLhpCurrent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getcareersplits">getCareerSplits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getlastxgames">getLastxGames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getavgoverlastxgames">getAvgOverLastXGames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getpostseasonstats">getPostseasonStats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getcareer">getCareer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FantasyBaseballTrends</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">FantasyBaseballTrends</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/FantasyBaseballTrends.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fantasybaseballtrends">
+<h1>FantasyBaseballTrends<a class="headerlink" href="#fantasybaseballtrends" title="Permalink to this headline">¶</a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="setupwebsite">
+<h2>setUpWebsite<a class="headerlink" href="#setupwebsite" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.setUpWebsite">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">setUpWebsite</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.setUpWebsite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Before using any function in this library, run this first to set up the website!
+This function sets up baseball-reference and returns the browser.</p>
+</dd></dl>
+
+</section>
+<section id="searchplayer">
+<h2>searchPlayer<a class="headerlink" href="#searchplayer" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.searchPlayer">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">searchPlayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.searchPlayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function to search for a given player on the website.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> (<em>webdriver</em>) – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Url of the players home stats page</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="get2023season">
+<h2>get2023Season<a class="headerlink" href="#get2023season" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.get2023Season">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">get2023Season</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.get2023Season" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves the current 2023 Stats for a player.
+Returns a pandas DataFrame that contains the information from the 2023 stats table on baseball-reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains the season stats</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getlastgame">
+<h2>getLastGame<a class="headerlink" href="#getlastgame" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getLastGame">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getLastGame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getLastGame" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves a players last game stats.
+Returns a pandas DataFrame that contains the stats from a players last game.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains a players last game stats</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getvsrhpcurrent">
+<h2>getVsRhpCurrent<a class="headerlink" href="#getvsrhpcurrent" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getVsRhpCurrent">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getVsRhpCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getVsRhpCurrent" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves a players current season stats against right handed pitching.
+Returns a pandas DataFrame that contains a players current season stats against right handed pitching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains stats against all right handed pitchers split by starter and reliever</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getvslhpcurrent">
+<h2>getVsLhpCurrent<a class="headerlink" href="#getvslhpcurrent" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getVsLhpCurrent">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getVsLhpCurrent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getVsLhpCurrent" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves a players current season stats against left handed pitching.
+Returns a pandas DataFrame that contains a players current season stats left right handed pitching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains stats against all left handed pitchers split by starter and reliever</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getcareersplits">
+<h2>getCareerSplits<a class="headerlink" href="#getcareersplits" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getCareerSplits">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getCareerSplits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getCareerSplits" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves a players career stats against all pitching.
+Returns a pandas DataFrame that contains a players career stats against all pitching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> (<em>webdriver</em>) – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>each row represents stats against different handed starting pitchers and all pitchers</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getlastxgames">
+<h2>getLastxGames<a class="headerlink" href="#getlastxgames" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getLastxGames">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getLastxGames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamesNum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getLastxGames" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves a players stats over gamesNum amount of games.
+Returns a pandas DataFrame that contains a players stats in each of the last games.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> (<em>webdriver</em>) – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+<li><p><strong>gamesNum</strong> (<em>int</em>) – how many games do retrieve stats for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>each row represents stats a game with their latest game as the last row</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getavgoverlastxgames">
+<h2>getAvgOverLastXGames<a class="headerlink" href="#getavgoverlastxgames" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getAvgOverLastxGames">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getAvgOverLastxGames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamesNum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getAvgOverLastxGames" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves the players avg stats over ‘gamesNum’ amount of games.
+Returns a pandas DataFrame that contains a players avg stats over the last games.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> (<em>webdriver</em>) – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+<li><p><strong>gamesNum</strong> (<em>int</em>) – how many games do retrieve stats for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>shows the average of that stat over specified number of games</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getpostseasonstats">
+<h2>getPostseasonStats<a class="headerlink" href="#getpostseasonstats" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getPostseasonStats">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getPostseasonStats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getPostseasonStats" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves the Postseason stats for a player.
+Returns a pandas DataFrame that contains the information from the postseason stats section on baseball-reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains the postseason stats</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="getcareer">
+<h2>getCareer<a class="headerlink" href="#getcareer" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="FantasyBaseballTrends.getCareer">
+<span class="sig-prename descclassname"><span class="pre">FantasyBaseballTrends.</span></span><span class="sig-name descname"><span class="pre">getCareer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">browser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#FantasyBaseballTrends.getCareer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A function that retrieves the career stats for a player.
+Returns a pandas DataFrame that contains the information from the career stats table on baseball-reference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>browser</strong> – the browser that you are using, returned by setUpWebsite</p></li>
+<li><p><strong>player</strong> (<em>str</em>) – the player whose stats you are trying to retrieve</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>contains the career stats</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CONTRIBUTING.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Carlos Gonzalez-Romero.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
