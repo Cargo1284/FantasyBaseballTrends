@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/Cargo1284/FantasyBaseballTrends/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Cargo1284/FantasyBaseballTrends)
 ![Crates.io](https://img.shields.io/crates/l/ap)
 ![GitHub issues](https://img.shields.io/github/issues/cargo1284/fantasybaseballtrends)
-[![Github Pages Docs](https://img.shields.io/badge/docs-gh--pages-blue)](https://cargo1284.github.io/FantasyBaseballTrends/)
+[![Github Pages Docs](https://img.shields.io/badge/docs-gh--pages-blue)](https://cargo1284.github.io/FantasyBaseballTrends/index.html)
 
 
 
@@ -52,4 +52,16 @@ This funciton will return a hitter's stats over a user specified number of games
 ```
 getLastxGames(browser, player, gamesNum)
 ```
+
+## Example
+A sample function can look like the code below. NOTE: when using this library you must first set up the browser by using the setUpWebsite() function. The function below returns Yadier Molina's career stats. 
+```python
+import FantasyBaseballTrends as fbt
+
+browser = fbt.setUpWebsite()
+
+print(getCareer(browser, "Yadier Molina"))
+
+```
+
 
